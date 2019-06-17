@@ -1,0 +1,7 @@
+[
+  "test/test_sample.py::test_sample", 
+  "test/test_sample.py::test_mytest", 
+  "test/test_sample.py::TestClass::()::test_one", 
+  "test/test_sample.py::test_person", 
+  "test/test_sample.py::test_needsfiles"
+]
