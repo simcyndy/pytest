@@ -1,0 +1,15 @@
+. test/test_sample.py::test_sample
+. test/test_sample.py::test_mytest
+. test/test_sample.py::TestClass::()::test_one
+. test/test_sample.py::test_person
+. test/test_sample.py::test_needsfiles
+. test/test_sample.py::test_ok
+s test/test_sample.py::test_skip
+ Skipped: Skipping the test
+x test/test_sample.py::test_xfail
+ def test_xfail():
+ >   	pytest.xfail("xfailing this test")
+ E    XFailed: xfailing this test
+ 
+ test\test_sample.py:122: XFailed
+X test/test_sample.py::test_xpass

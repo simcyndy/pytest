@@ -3,5 +3,9 @@
   "test/test_sample.py::test_mytest", 
   "test/test_sample.py::TestClass::()::test_one", 
   "test/test_sample.py::test_person", 
-  "test/test_sample.py::test_needsfiles"
+  "test/test_sample.py::test_needsfiles", 
+  "test/test_sample.py::test_ok", 
+  "test/test_sample.py::test_skip", 
+  "test/test_sample.py::test_xfail", 
+  "test/test_sample.py::test_xpass"
 ]

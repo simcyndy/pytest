@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Execute in quiet mode : pytest -q [name_of_file].py
 pytest --version # shows where pytest was imported from
@@ -22,7 +23,28 @@ pytest --tb=no # no traceback at all
 
 pytest --full-trace causes very long traces to be printed on error (longer than --tb=long). It also ensures that
 a stack trace is printed on KeyboardInterrupt (Ctrl+C).
+
+pytest -ra => short test summary info, a => (all except passes)
+The -r options accepts a number of characters after it, with a used above meaning “all except passes”.
+Here is the full list of available characters that can be used:
+• f - failed
+• E - error
+• s - skipped
+• x - xfailed
+• X - xpassed
+
+pytest -x --pdb # drop to PDB on first failure, then end test session
+pytest --pdb --maxfail=3 # drop to PDB for first three failures
+
+pytest --trace => This will invoke the Python debugger at the start of every test.
+
+pytest --junitxml=path => create result files which can be read by Jenkins or other Continuous integration servers
+
+pytest --pastebin=all - Send information to an online paste service
+pytest -p pytest_cov => Load plugins early before test starts
+
 """
+
 import pytest
 
 
@@ -72,8 +94,37 @@ def test_person():
 
 def test_needsfiles(tmpdir):
 	print tmpdir
+
+
 # assert 0
 
 
 ###########################################
+@pytest.fixture
+def error_fixture():
+	assert 0
 
+
+def test_ok():
+	print("ok")
+
+
+# def test_fail():
+# 	assert 0
+
+
+# def test_error(error_fixture):
+# 	pass
+
+
+def test_skip():
+	pytest.skip("Skipping the test")
+
+
+def test_xfail():
+	pytest.xfail("xfailing this test")
+
+
+@pytest.mark.xfail(reason = "Always Fail")
+def test_xpass():
+	pass
