@@ -128,3 +128,22 @@ def test_xfail():
 @pytest.mark.xfail(reason = "Always Fail")
 def test_xpass():
 	pass
+
+
+#################################################
+def raise_division_by_zero_error(answer):
+	if answer / 0:
+		raise ZeroDivisionError
+
+
+# def test_raise_division_by_zero_error():
+# 	raise_division_by_zero_error(5)
+
+
+def myfunc():
+	raise ValueError("Exception 123 raised")
+
+
+def test_match():
+	with pytest.raises(ValueError, match = r".* 123 .*"):
+		myfunc()

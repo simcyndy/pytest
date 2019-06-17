@@ -1,5 +1,6 @@
 {
   "test/test_sample.py::TestClass::()::test_two": true, 
   "test/test_sample.py::test_error": true, 
-  "test/test_sample.py::test_fail": true
+  "test/test_sample.py::test_fail": true, 
+  "test/test_sample.py::test_raise_division_by_zero_error": true
 }
