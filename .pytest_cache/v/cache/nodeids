@@ -8,5 +8,7 @@
   "test/test_sample.py::test_skip", 
   "test/test_sample.py::test_xfail", 
   "test/test_sample.py::test_xpass", 
-  "test/test_sample.py::test_match"
+  "test/test_sample.py::test_match", 
+  "test/test_sample.py::test_set_comparison", 
+  "test/test_sample.py::test_compare"
 ]
